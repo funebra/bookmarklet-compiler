@@ -1,0 +1,17 @@
+{
+  "entry_name": "Funebra Watch BN3",
+  "version": "1.0.0",
+  "author": {
+    "name": "Peter M. Lugha",
+    "handle": "@funebra"
+  },
+  "division": "DOM / BN-Point",
+  "raw_js_byte_count": 6490,
+  "uri_encoded_byte_count": 10558,
+  "external_dependencies": [],
+  "namespace": "__FUNEBRA_WATCH_BN3",
+  "browser_compatibility": [
+    "Chrome"
+  ],
+  "export_capabilities": []
+}
