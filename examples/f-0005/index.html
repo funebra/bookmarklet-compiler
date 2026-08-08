@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Funebra Watch BN3 — F-0005 Test</title>
+<style>
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: #101018;
+    color: #d8e8ff;
+    font: 14px monospace;
+  }
+
+  main {
+    padding: 24px;
+    max-width: 720px;
+  }
+
+  button {
+    margin: 4px;
+    padding: 8px 12px;
+    color: #00e5ff;
+    background: #172232;
+    border: 1px solid #00e5ff55;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #status {
+    margin-top: 16px;
+    color: #76ff03;
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Funebra Watch BN3</h1>
+  <p>Neutral lifecycle test page for F-0005 v1.0.</p>
+
+  <button data-test="load">Load / Execute</button>
+  <button data-test="pause">Pause</button>
+  <button data-test="resume">Resume</button>
+  <button data-test="toggle">Toggle UI</button>
+  <button data-test="destroy">Destroy</button>
+
+  <div id="status">Ready</div>
+</main>
+
+<script>
+const NS = "__FUNEBRA_WATCH_BN3";
+const status = document.getElementById("status");
+
+function controller() {
+  return window[NS] || null;
+}
+
+function report(message) {
+  status.textContent = message;
+}
+
+function loadWatch() {
+  const script = document.createElement("script");
+  script.src = "./watch-bn3.js?" + Date.now();
+  script.onload = () => {
+    script.remove();
+    report(controller() ? "Watch loaded" : "Load completed without controller");
+  };
+  script.onerror = () => report("Failed to load watch-bn3.js");
+  document.head.appendChild(script);
+}
+
+document.querySelector('[data-test="load"]').onclick = loadWatch;
+
+document.querySelector('[data-test="pause"]').onclick = () => {
+  const api = controller();
+  if (!api) return report("Watch is not loaded");
+  api.pause();
+  report("Paused");
+};
+
+document.querySelector('[data-test="resume"]').onclick = () => {
+  const api = controller();
+  if (!api) return report("Watch is not loaded");
+  api.resume();
+  report("Resumed");
+};
+
+document.querySelector('[data-test="toggle"]').onclick = () => {
+  const api = controller();
+  if (!api) return report("Watch is not loaded");
+  api.toggleUI();
+  report("UI toggled");
+};
+
+document.querySelector('[data-test="destroy"]').onclick = () => {
+  const api = controller();
+  if (!api) return report("Watch is not loaded");
+  api.destroy();
+  report("Destroyed cleanly");
+};
+</script>
+</body>
+</html>
