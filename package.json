@@ -1,0 +1,24 @@
+{
+  "name": "@funebra/bookmarklet-compiler",
+  "version": "1.0.0",
+  "description": "Portable bookmarklet compilers for Funebra TextArt and evaluated BN snapshots.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js",
+    "./textart": "./src/textart-bookmarklet-compiler.js",
+    "./bn": "./src/bn-bookmarklet-compiler.js"
+  },
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check src/index.js && node --check src/textart-bookmarklet-compiler.js && node --check src/bn-bookmarklet-compiler.js"
+  },
+  "keywords": [
+    "funebra",
+    "bookmarklet",
+    "bn-point",
+    "textart",
+    "generative-art"
+  ],
+  "author": "Peter M. Lugha / pLabs Entertainment",
+  "license": "MIT"
+}
