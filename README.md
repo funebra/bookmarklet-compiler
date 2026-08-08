@@ -10,8 +10,11 @@ future Funebra bookmarklet formats:
 - **BN Compiler v1.0 — Evaluated BN Snapshot** captures one already-rendered
   BN point and compiles its evaluated appearance, state, relative position,
   and provenance into a portable bookmarklet.
-- **F-0005 3D bookmarklets** remain a future extension and do not alter either
-  frozen v1 contract.
+- **F-0005 3D Graphics Bookmarklet Competition Specification v1.0 — Frozen**
+  defines the official DOM/BN-point competition standard, lifecycle contract,
+  judging framework, reference engines, printable mesh pathway, and canonical
+  Funebra Watch BN3 submission. It extends the repository without altering the
+  frozen TextArt or BN Compiler v1 contracts.
 
 ## Install
 
@@ -69,6 +72,8 @@ src/
   bn-bookmarklet-compiler.js
 docs/
   textart-compiler-v1.0.md
+  specifications/
+    F-0005-v1.0.md
 examples/
   textart-universal-scene-v2.js
 test/
