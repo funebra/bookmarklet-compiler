@@ -1,0 +1,15 @@
+{
+  "entry_name": "REPLACE_WITH_ENTRY_NAME",
+  "version": "1.0.0",
+  "author": {
+    "name": "REPLACE_WITH_AUTHOR_NAME",
+    "handle": "@replace_with_handle"
+  },
+  "division": "REPLACE_WITH_DIVISION",
+  "raw_js_byte_count": 0,
+  "uri_encoded_byte_count": 0,
+  "external_dependencies": [],
+  "namespace": "__FUNEBRA_NS_REPLACE_WITH_ENTRY_NAME",
+  "browser_compatibility": [],
+  "export_capabilities": []
+}
