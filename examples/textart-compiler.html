@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Funebra TextArt Bookmarklet Compiler</title>
+  <style>
+    body { font: 16px system-ui; max-width: 58rem; margin: 2rem auto; padding: 0 1rem; background: #101018; color: #eee; }
+    textarea, output { box-sizing: border-box; display: block; width: 100%; min-height: 12rem; padding: 1rem; margin: 1rem 0; background: #07070c; color: #8fffc5; border: 1px solid #427a61; }
+    output { overflow-wrap: anywhere; font: 12px monospace; }
+    button { padding: .7rem 1rem; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>Funebra TextArt Bookmarklet Compiler</h1>
+  <textarea id="art">♥ FUNEBRA ♥</textarea>
+  <button id="compile">Compile and copy</button>
+  <output id="result"></output>
+  <script type="module">
+    import { generateFunebraBookmarklet } from "../src/textart-bookmarklet-compiler.js";
+
+    document.getElementById("compile").addEventListener("click", async () => {
+      const bookmarklet = generateFunebraBookmarklet(document.getElementById("art").value);
+      document.getElementById("result").textContent = bookmarklet;
+      await navigator.clipboard.writeText(bookmarklet);
+    });
+  </script>
+</body>
+</html>
